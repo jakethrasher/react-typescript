@@ -1,16 +1,6 @@
-import React from 'react'
-import { JsxElement } from 'typescript'
+import React from 'react';
+import {IState as IProps} from '../App';
 
-interface IProps{
-    tracks: {
-      artist:string
-      album: string
-      bassist: string
-      year: number
-      title: string
-      link: string
-    }[]
-}
 const TrackList: React.FC<IProps> = ({tracks}) => {
 
   const renderList = () => {

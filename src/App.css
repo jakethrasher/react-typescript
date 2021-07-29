@@ -10,3 +10,8 @@ ul{
 p, a{
   margin: 0.3rem;
 }
+form{
+  display:flex;
+  flex-direction: column;
+  width: 12vw;
+}
