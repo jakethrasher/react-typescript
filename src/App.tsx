@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState }from 'react';
 import './App.css';
+import Form from './components/Form';
+import TrackList from './components/TrackList';
 
+interface IState{
+  tracks: {
+    artist:string
+    album: string
+    bassist:string
+    year: number
+    title: string
+    link:string
+  }[]
+}
 function App() {
+  const [tracks, setTrack] = useState<IState['tracks']>([{
+    artist:'Tower of Power',
+    album: 'Tower of Power',
+    bassist: 'Rocco Prestia',
+    year:1973,
+    title:'What is Hip',
+    link: 'https://www.youtube.com/watch?v=oAatPPEaZDA'
+  }]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>A curated list of cool basslines</h1>
+      <TrackList tracks={tracks}/>
+      <Form/>
     </div>
   );
 }
